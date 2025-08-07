@@ -1,5 +1,5 @@
-Origin: gh-pages/deb .
-Label: gh-pages/deb .
+Origin: . .
+Label: . .
 Archive: .
 Suite: .
 Architecture: amd64
