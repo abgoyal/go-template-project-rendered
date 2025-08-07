@@ -1,0 +1,18 @@
+name: Release
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    uses: abgoyal/go-release-pipeline/.github/workflows/pipeline.yml@main
+    with:
+      goreleaser-config-path: .goreleaser.yml
+      enable-deb: true
+      enable-rpm: true
+      enable-apk: true
+      deb-postinstall-path: .github/scripts/postinstall.deb.sh
+      rpm-postinstall-path: .github/scripts/postinstall.rpm.sh
+    secrets: inherit # This securely passes required secrets to the reusable workflow
+
