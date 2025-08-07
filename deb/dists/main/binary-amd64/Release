@@ -1,0 +1,6 @@
+Origin: gh-pages/deb .
+Label: gh-pages/deb .
+Archive: .
+Suite: .
+Architecture: amd64
+Component: main
