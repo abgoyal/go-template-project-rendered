@@ -7,6 +7,6 @@ import "fmt"
 var version = "dev"
 
 func main() {
-	fmt.Printf("Hello from multiprof! Version: %s\n", version)
+	fmt.Printf("Hello from go-template-project-rendered! Version: %s\n", version)
 }
 

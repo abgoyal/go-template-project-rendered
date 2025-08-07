@@ -1,9 +1,9 @@
-project_name: multiprof
+project_name: go-template-project-rendered
 version: 2
 
 builds:
   # Linux-only builds (for .deb/.rpm/.apk packages and raw binaries)
-  - id: multiprof-linux
+  - id: go-template-project-rendered-linux
     binary: '{{ .ProjectName }}'
     env:
       - CGO_ENABLED=0
@@ -14,7 +14,7 @@ builds:
       - -s -w -X main.version={{.Version}}
 
   # Windows + macOS builds (for raw binaries)
-  - id: multiprof-cross
+  - id: go-template-project-rendered-cross
     binary: '{{ .ProjectName }}'
     env:
       - CGO_ENABLED=0
@@ -27,18 +27,18 @@ builds:
 archives:
   # Raw binaries for all platforms (one file per OS/Arch, uncompressed)
   - id: raw-binaries
-    ids: [multiprof-linux, multiprof-cross]
+    ids: [go-template-project-rendered-linux, go-template-project-rendered-cross]
     formats: binary
     name_template: '{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}'
 
 nfpms:
   - id: pkg-deb
-    ids: [multiprof-linux]
-    package_name: multiprof
+    ids: [go-template-project-rendered-linux]
+    package_name: go-template-project-rendered
     vendor: "abgoyal"
-    homepage: "https://github.com/abgoyal/multiprof"
+    homepage: "https://github.com/abgoyal/go-template-project-rendered"
     maintainer: "abgoyal <abgoyal@gmail.com>"
-    description: "multiple profiles dir manager"
+    description: "go-template-project-rendered"
     license: "MIT"
     formats: [deb]
     scripts:
@@ -49,12 +49,12 @@ nfpms:
         type: file
 
   - id: pkg-rpm
-    ids: [multiprof-linux]
-    package_name: multiprof
+    ids: [go-template-project-rendered-linux]
+    package_name: go-template-project-rendered
     vendor: "abgoyal"
-    homepage: "https://github.com/abgoyal/multiprof"
+    homepage: "https://github.com/abgoyal/go-template-project-rendered"
     maintainer: "abgoyal <abgoyal@gmail.com>"
-    description: "multiple profiles dir manager"
+    description: "go-template-project-rendered"
     license: "MIT"
     formats: [rpm]
     scripts:
@@ -65,12 +65,12 @@ nfpms:
         type: file
 
   - id: pkg-apk
-    ids: [multiprof-linux]
-    package_name: multiprof
+    ids: [go-template-project-rendered-linux]
+    package_name: go-template-project-rendered
     vendor: "abgoyal"
-    homepage: "https://github.com/abgoyal/multiprof"
+    homepage: "https://github.com/abgoyal/go-template-project-rendered"
     maintainer: "abgoyal <abgoyal@gmail.com>"
-    description: "multiple profiles dir manager"
+    description: "go-template-project-rendered"
     license: "MIT"
     formats: [apk]
     contents:

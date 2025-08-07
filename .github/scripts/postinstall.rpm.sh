@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 REPO_OWNER="abgoyal"
-REPO_NAME="multiprof"
+REPO_NAME="go-template-project-rendered"
 REPO_FILE_PATH="/etc/yum.repos.d/${REPO_NAME}.repo"
 echo "[INFO] Configuring YUM/DNF repository for future updates..."
 cat > "${REPO_FILE_PATH}" << EOF

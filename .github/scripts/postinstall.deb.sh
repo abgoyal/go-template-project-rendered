@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 REPO_OWNER="abgoyal"
-REPO_NAME="multiprof"
+REPO_NAME="go-template-project-rendered"
 GPG_KEY_URL="https://${REPO_OWNER}.github.io/${REPO_NAME}/deb/public.key"
 SOURCES_LIST_URL="https://${REPO_OWNER}.github.io/${REPO_NAME}/deb"
 KEYRING_PATH="/usr/share/keyrings/${REPO_NAME}-archive-keyring.gpg"
