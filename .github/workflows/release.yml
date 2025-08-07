@@ -4,6 +4,10 @@ on:
     tags:
       - 'v*'
 
+permissions:
+  contents: write
+  pages: write
+
 jobs:
   release:
     uses: abgoyal/go-release-pipeline/.github/workflows/pipeline.yml@main
