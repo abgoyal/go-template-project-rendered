@@ -15,7 +15,7 @@ jobs:
       goreleaser-config-path: .goreleaser.yml
       enable-deb: true
       enable-rpm: true
-      enable-apk: false
+      enable-apk: true
       deb-postinstall-path: .github/scripts/postinstall.deb.sh
       rpm-postinstall-path: .github/scripts/postinstall.rpm.sh
     secrets: inherit # This securely passes required secrets to the reusable workflow

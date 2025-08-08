@@ -77,6 +77,9 @@ nfpms:
       - src: ./LICENSE
         dst: /usr/share/licenses/{{ .PackageName }}/LICENSE
         type: file
+    signature:
+      key_file: "{{ .Env.APK_KEY_PATH }}"
+      key_name: "ci-key.rsa.pub"
 
 changelog:
   sort: asc
