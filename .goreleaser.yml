@@ -64,7 +64,6 @@ nfpms:
         dst: /usr/share/licenses/{{ .PackageName }}/LICENSE
         type: file
 
-apks:
   - id: pkg-apk
     ids: [go-template-project-rendered-linux]
     package_name: go-template-project-rendered
@@ -73,14 +72,12 @@ apks:
     maintainer: "abgoyal <abgoyal@gmail.com>"
     description: "go-template-project-rendered"
     license: "MIT"
+    formats: [apk]
     contents:
       - src: ./LICENSE
         dst: /usr/share/licenses/{{ .PackageName }}/LICENSE
         type: file
-    # The signature block is valid here.
-    signature:
-      key_file: "{{ .Env.APK_KEY_PATH }}"
-      key_name: "ci-key.rsa.pub"
+
 
 
 changelog:
