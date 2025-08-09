@@ -8,14 +8,11 @@ permissions:
   contents: write
   pages: write
 
-env:
-  RELEASER_REPO: abgoyal/go-release-pipeline
-
 jobs:
   release:
-    uses: ${{ env.RELEASER_REPO }}/.github/workflows/pipeline.yml@main
+    uses: abgoyal/go-release-pipeline/.github/workflows/pipeline.yml@main
     with:
-      releaser_repo: ${{ env.RELEASER_REPO }}
+      releaser_repo: abgoyal/go-release-pipeline
       goreleaser-config-path: .goreleaser.yml
       enable-deb: true
       enable-rpm: true
