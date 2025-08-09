@@ -12,7 +12,7 @@ jobs:
   release:
     uses: abgoyal/go-release-pipeline/.github/workflows/pipeline.yml@main
     with:
-      releaser_repo: abgoyal/go-release-pipeline
+      releaser-repo: abgoyal/go-release-pipeline
       goreleaser-config-path: .goreleaser.yml
       enable-deb: true
       enable-rpm: true
