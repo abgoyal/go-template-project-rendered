@@ -9,7 +9,6 @@ builds:
       - CGO_ENABLED=0
     goos: [linux]
     goarch: [amd64, arm64]
-    goamd64: v1
     main: ./
     ldflags:
       - -s -w -X main.version={{.Version}}
@@ -21,7 +20,6 @@ builds:
       - CGO_ENABLED=0
     goos: [windows, darwin]
     goarch: [amd64, arm64]
-    goamd64: v1
     main: ./
     ldflags:
       - -s -w -X main.version={{.Version}}
@@ -43,6 +41,10 @@ nfpms:
     description: "go-template-project-rendered"
     license: "MIT"
     formats: [deb, rpm, apk]
+    # Correctly map Go architecture names to the desired names for each package type.
+    replacements:
+      amd64: x86_64
+      arm64: aarch64
     contents:
       - src: ./LICENSE
         dst: /usr/share/licenses/{{ .PackageName }}/LICENSE
@@ -64,15 +66,6 @@ nfpms:
       rpm:
         scripts:
           postinstall: "{{ .Env.RPM_POSTINSTALL_PATH }}"
-        arch: >-
-          {{- if eq .Arch "amd64" }}x86_64
-          {{- else if eq .Arch "arm64" }}aarch64
-          {{- else }}{{ .Arch }}{{- end }}
-      apk:
-        arch: >-
-          {{- if eq .Arch "amd64" }}x86_64
-          {{- else if eq .Arch "arm64" }}aarch64
-          {{- else }}{{ .Arch }}{{- end }}
 
 changelog:
   sort: asc
@@ -83,3 +76,4 @@ changelog:
 
 release:
   prerelease: auto
+
