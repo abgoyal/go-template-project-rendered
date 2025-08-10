@@ -66,7 +66,6 @@ nfpms:
         scripts:
           postinstall: "{{ .Env.RPM_POSTINSTALL_PATH }}"
 
-nfpms:
   - id: pkg-arm64
     arch: arm64
     ids: [go-template-project-rendered-linux]
