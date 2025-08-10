@@ -32,7 +32,7 @@ archives:
     name_template: '{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}'
 
 nfpms:
-  - id: pkg-deb
+  - id: pkg
     ids: [go-template-project-rendered-linux]
     package_name: go-template-project-rendered
     vendor: "abgoyal"
@@ -40,9 +40,7 @@ nfpms:
     maintainer: "abgoyal <abgoyal@gmail.com>"
     description: "go-template-project-rendered"
     license: "MIT"
-    formats: [deb]
-    scripts:
-      postinstall: "{{ .Env.DEB_POSTINSTALL_PATH }}"
+    formats: [deb, rpm, apk]
     contents:
       - src: ./LICENSE
         dst: /usr/share/licenses/{{ .PackageName }}/LICENSE
@@ -50,43 +48,20 @@ nfpms:
     deb:
       signature:
         key_file: "{{ .Env.DEB_KEY_FILE }}"
-
-  - id: pkg-rpm
-    ids: [go-template-project-rendered-linux]
-    package_name: go-template-project-rendered
-    vendor: "abgoyal"
-    homepage: "https://github.com/abgoyal/go-template-project-rendered"
-    maintainer: "abgoyal <abgoyal@gmail.com>"
-    description: "go-template-project-rendered"
-    license: "MIT"
-    formats: [rpm]
-    scripts:
-      postinstall: "{{ .Env.RPM_POSTINSTALL_PATH }}"
-    contents:
-      - src: ./LICENSE
-        dst: /usr/share/licenses/{{ .PackageName }}/LICENSE
-        type: file
     rpm:
       signature:
         key_file: "{{ .Env.RPM_KEY_FILE }}"
-
-  - id: pkg-apk
-    ids: [go-template-project-rendered-linux]
-    package_name: go-template-project-rendered
-    vendor: "abgoyal"
-    homepage: "https://github.com/abgoyal/go-template-project-rendered"
-    maintainer: "abgoyal <abgoyal@gmail.com>"
-    description: "go-template-project-rendered"
-    license: "MIT"
-    formats: [apk]
-    contents:
-      - src: ./LICENSE
-        dst: /usr/share/licenses/{{ .PackageName }}/LICENSE
-        type: file
     apk:
       signature:
         key_file: "{{ .Env.APK_KEY_FILE }}"
         key_name: "{{ .Env.APK_KEY_NAME }}"
+    overrides:
+      deb:
+        scripts:
+          postinstall: "{{ .Env.DEB_POSTINSTALL_PATH }}"
+      rpm:
+        scripts:
+          postinstall: "{{ .Env.RPM_POSTINSTALL_PATH }}"
 
 changelog:
   sort: asc
