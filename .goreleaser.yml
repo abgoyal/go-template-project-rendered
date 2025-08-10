@@ -77,8 +77,10 @@ nfpms:
       - src: ./LICENSE
         dst: /usr/share/licenses/{{ .PackageName }}/LICENSE
         type: file
-
-
+    apk:
+      signature:
+        key_file: {{ .Env.APK_KEY_FILE }}
+        key_name: {{ .Env.APK_KEY_NAME }}
 
 changelog:
   sort: asc
