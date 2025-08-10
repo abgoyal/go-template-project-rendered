@@ -79,8 +79,8 @@ nfpms:
         type: file
     apk:
       signature:
-        key_file: {{ .Env.APK_KEY_FILE }}
-        key_name: {{ .Env.APK_KEY_NAME }}
+        key_file: "{{ .Env.APK_KEY_FILE }}"
+        key_name: "{{ .Env.APK_KEY_NAME }}"
 
 changelog:
   sort: asc
