@@ -41,31 +41,39 @@ nfpms:
     description: "go-template-project-rendered"
     license: "MIT"
     formats: [deb, rpm, apk]
-    # Correctly map Go architecture names to the desired names for each package type.
-    replacements:
-      amd64: x86_64
-      arm64: aarch64
     contents:
       - src: ./LICENSE
         dst: /usr/share/licenses/{{ .PackageName }}/LICENSE
         type: file
+
     deb:
+      architecture: >-
+        {{- if eq .Arch "amd64" }}amd64
+        {{- else if eq .Arch "arm64" }}arm64
+        {{- else }}{{ .Arch }}{{- end }}
       signature:
         key_file: "{{ .Env.DEB_KEY_FILE }}"
+      scripts:
+        postinstall: "{{ .Env.DEB_POSTINSTALL_PATH }}"
+
     rpm:
+      architecture: >-
+        {{- if eq .Arch "amd64" }}x86_64
+        {{- else if eq .Arch "arm64" }}aarch64
+        {{- else }}{{ .Arch }}{{- end }}
       signature:
         key_file: "{{ .Env.RPM_KEY_FILE }}"
+      scripts:
+        postinstall: "{{ .Env.RPM_POSTINSTALL_PATH }}"
+
     apk:
+      architecture: >-
+        {{- if eq .Arch "amd64" }}x86_64
+        {{- else if eq .Arch "arm64" }}aarch64
+        {{- else }}{{ .Arch }}{{- end }}
       signature:
         key_file: "{{ .Env.APK_KEY_FILE }}"
         key_name: "{{ .Env.APK_KEY_NAME }}"
-    overrides:
-      deb:
-        scripts:
-          postinstall: "{{ .Env.DEB_POSTINSTALL_PATH }}"
-      rpm:
-        scripts:
-          postinstall: "{{ .Env.RPM_POSTINSTALL_PATH }}"
 
 changelog:
   sort: asc
