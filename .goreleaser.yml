@@ -47,6 +47,9 @@ nfpms:
       - src: ./LICENSE
         dst: /usr/share/licenses/{{ .PackageName }}/LICENSE
         type: file
+    deb:
+      signature:
+        key_file: "{{ .Env.DEB_KEY_FILE }}"
 
   - id: pkg-rpm
     ids: [go-template-project-rendered-linux]
@@ -63,6 +66,9 @@ nfpms:
       - src: ./LICENSE
         dst: /usr/share/licenses/{{ .PackageName }}/LICENSE
         type: file
+    rpm:
+      signature:
+        key_file: "{{ .Env.RPM_KEY_FILE }}"
 
   - id: pkg-apk
     ids: [go-template-project-rendered-linux]
