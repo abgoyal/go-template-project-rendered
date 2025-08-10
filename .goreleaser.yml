@@ -32,8 +32,7 @@ archives:
     name_template: '{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}'
 
 nfpms:
-  - id: pkg-amd64
-    arch: amd64
+  - id: pkg
     ids: [go-template-project-rendered-linux]
     package_name: go-template-project-rendered
     vendor: "abgoyal"
@@ -50,45 +49,9 @@ nfpms:
       signature:
         key_file: "{{ .Env.DEB_KEY_FILE }}"
     rpm:
-      arch: x86_64
       signature:
         key_file: "{{ .Env.RPM_KEY_FILE }}"
     apk:
-      arch: x86_64
-      signature:
-        key_file: "{{ .Env.APK_KEY_FILE }}"
-        key_name: "{{ .Env.APK_KEY_NAME }}"
-    overrides:
-      deb:
-        scripts:
-          postinstall: "{{ .Env.DEB_POSTINSTALL_PATH }}"
-      rpm:
-        scripts:
-          postinstall: "{{ .Env.RPM_POSTINSTALL_PATH }}"
-
-  - id: pkg-arm64
-    arch: arm64
-    ids: [go-template-project-rendered-linux]
-    package_name: go-template-project-rendered
-    vendor: "abgoyal"
-    homepage: "https://github.com/abgoyal/go-template-project-rendered"
-    maintainer: "abgoyal <abgoyal@gmail.com>"
-    description: "go-template-project-rendered"
-    license: "MIT"
-    formats: [deb, rpm, apk]
-    contents:
-      - src: ./LICENSE
-        dst: /usr/share/licenses/{{ .PackageName }}/LICENSE
-        type: file
-    deb:
-      signature:
-        key_file: "{{ .Env.DEB_KEY_FILE }}"
-    rpm:
-      arch: aarch64
-      signature:
-        key_file: "{{ .Env.RPM_KEY_FILE }}"
-    apk:
-      arch: aarch64
       signature:
         key_file: "{{ .Env.APK_KEY_FILE }}"
         key_name: "{{ .Env.APK_KEY_NAME }}"
