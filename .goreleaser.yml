@@ -45,35 +45,35 @@ nfpms:
       - src: ./LICENSE
         dst: /usr/share/licenses/{{ .PackageName }}/LICENSE
         type: file
-
     deb:
-      architecture: >-
+      arch: >-
         {{- if eq .Arch "amd64" }}amd64
         {{- else if eq .Arch "arm64" }}arm64
         {{- else }}{{ .Arch }}{{- end }}
       signature:
         key_file: "{{ .Env.DEB_KEY_FILE }}"
-      scripts:
-        postinstall: "{{ .Env.DEB_POSTINSTALL_PATH }}"
-
     rpm:
-      architecture: >-
+      arch: >-
         {{- if eq .Arch "amd64" }}x86_64
         {{- else if eq .Arch "arm64" }}aarch64
         {{- else }}{{ .Arch }}{{- end }}
       signature:
         key_file: "{{ .Env.RPM_KEY_FILE }}"
-      scripts:
-        postinstall: "{{ .Env.RPM_POSTINSTALL_PATH }}"
-
     apk:
-      architecture: >-
+      arch: >-
         {{- if eq .Arch "amd64" }}x86_64
         {{- else if eq .Arch "arm64" }}aarch64
         {{- else }}{{ .Arch }}{{- end }}
       signature:
         key_file: "{{ .Env.APK_KEY_FILE }}"
         key_name: "{{ .Env.APK_KEY_NAME }}"
+    overrides:
+      deb:
+        scripts:
+          postinstall: "{{ .Env.DEB_POSTINSTALL_PATH }}"
+      rpm:
+        scripts:
+          postinstall: "{{ .Env.RPM_POSTINSTALL_PATH }}"
 
 changelog:
   sort: asc
@@ -84,4 +84,3 @@ changelog:
 
 release:
   prerelease: auto
-
