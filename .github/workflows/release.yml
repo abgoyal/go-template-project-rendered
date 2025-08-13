@@ -17,6 +17,8 @@ jobs:
       enable-deb: true
       enable-rpm: true
       enable-apk: true
+      tests: true
+      dry-run: false
       deb-postinstall-path: .github/scripts/postinstall.deb.sh
       rpm-postinstall-path: .github/scripts/postinstall.rpm.sh
     secrets: inherit # This securely passes required secrets to the reusable workflow
