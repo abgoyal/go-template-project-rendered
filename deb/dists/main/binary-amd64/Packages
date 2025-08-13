@@ -4,13 +4,13 @@ Section:
 Installed-Size: 1416
 Maintainer: abgoyal <abgoyal@gmail.com>
 Architecture: amd64
-Version: 0.0.92
-Filename: pool/main/g/go-template-project-rendered/go-template-project-rendered_0.0.92_linux_amd64.deb
-Size: 659572
-MD5sum: 734d25d388b7911cafa9c493b9ee4fa2
-SHA1: 1e3dff1c2c673559231c5e96f46bc0ece86c33ef
-SHA256: 3f0eae8fbc07a598fe4576f13990faf63a15e693cf96f6ca49a6ebceba0aef4b
-SHA512: 6a03b4ff9d3b04a082bcc4a7bdcc7548173364adeec095a79ac0f10e07130a694cef4bb3cdd2fa4e6f8885eefad50aff8655ce9a4aeda82cf76f1414f6553b97
+Version: 0.0.99
+Filename: pool/main/g/go-template-project-rendered/go-template-project-rendered_0.0.99_linux_amd64.deb
+Size: 659566
+MD5sum: 64af37f307f88b713ea077b72037bc77
+SHA1: 33257805157b45c1e801dda20851d64eea84cdbf
+SHA256: 48aeedca7ab36ad86ef2c110d5aff5dc4b3e79073e1bfc93a7fb1e59b4c6eced
+SHA512: 0cf3ec5eddfc54b01ded9b07a88e73f48d39fc60eeed9e4d6a64b26bd375ee3b81727f5d9aade504e6265a2f2d5eb70dfbb92d9e9058c2740d9e3e0ed0d1b24f
 Description: go-template-project-rendered
 Homepage: https://github.com/abgoyal/go-template-project-rendered
 License: MIT
