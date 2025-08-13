@@ -4,6 +4,23 @@ Section:
 Installed-Size: 1472
 Maintainer: abgoyal <abgoyal@gmail.com>
 Architecture: arm64
+Version: 0.0.112
+Filename: pool/main/g/go-template-project-rendered/go-template-project-rendered_0.0.112_linux_arm64.deb
+Size: 622698
+MD5sum: 550f784db133188a5aa3a0efec8f6f75
+SHA1: 2ff3eb822fa82700965d9c3584c99c8cb91e6fb5
+SHA256: 53ea543b95f5e6736d9a972b928cb9ea6c672f02674c40862367bb493eb4138c
+SHA512: 3d3c0d4e71a579058f2766faabfb12f0dc7e654ed4f980b499df94dba41559749b22e96ef98825e032521a960ef07b50c32145ad9eb87b00848d08cd730ea15c
+Description: go-template-project-rendered
+Homepage: https://github.com/abgoyal/go-template-project-rendered
+License: MIT
+
+Package: go-template-project-rendered
+Priority: optional
+Section: 
+Installed-Size: 1472
+Maintainer: abgoyal <abgoyal@gmail.com>
+Architecture: arm64
 Version: 0.0.111
 Filename: pool/main/g/go-template-project-rendered/go-template-project-rendered_0.0.111_linux_arm64.deb
 Size: 622696
@@ -79,23 +96,6 @@ MD5sum: 42753a5112a07bec31a5d6d7202de6f9
 SHA1: a6d7facc67f41257645fb60a7ca264a8ecb34e4d
 SHA256: 67c959e1d9cdc0345c73df58e02f213eda6d1668948c1f5d03fbcf0670bb6160
 SHA512: 888a6b8f7b6fde0c4b08bf800e769fb94eb405cc112d8444ed6f389ddedfc4e5a5fe1c98dd6b0709a3086f6069d1249b0e2821a183a3b748630fc272f3798763
-Description: go-template-project-rendered
-Homepage: https://github.com/abgoyal/go-template-project-rendered
-License: MIT
-
-Package: go-template-project-rendered
-Priority: optional
-Section: 
-Installed-Size: 1472
-Maintainer: abgoyal <abgoyal@gmail.com>
-Architecture: arm64
-Version: 0.0.85
-Filename: pool/main/g/go-template-project-rendered/go-template-project-rendered_0.0.85_linux_arm64.deb
-Size: 622688
-MD5sum: 9bcc94bd0020f6dceefd853d0937e1f9
-SHA1: 30e7852553b7512017d753a3d990d3ffef4a7cf8
-SHA256: 46742bd9b82c59bde7355e0b2a66cd082ec742f1a61fb14debcd81ace8837455
-SHA512: 6f95c9ae00302a18268935445d177a28be7e88e596e5de8733db022b6b77dfc1a20f22895270e8be55e526ff2522d61604b772d64bf5f2f9d6fea62aecb8adac
 Description: go-template-project-rendered
 Homepage: https://github.com/abgoyal/go-template-project-rendered
 License: MIT
