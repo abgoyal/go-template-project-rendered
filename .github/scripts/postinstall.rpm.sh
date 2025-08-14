@@ -13,4 +13,3 @@ gpgcheck=1
 gpgkey=https://${REPO_OWNER}.github.io/${REPO_NAME}/rpm/public.key
 EOF
 echo -e "\n[OK] Repository for '${REPO_NAME}' has been configured successfully."
-
